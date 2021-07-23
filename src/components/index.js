@@ -15,6 +15,7 @@ export * from './XiwaDropDownMenu/XiwaDropDownMenu';
 export * from './XiwaImage/XiwaImage';
 export * from './XiwaLayout/XiwaLayout';
 export * from './XiwaLink/XiwaLink';
+export * from './XiwaModal/XiwaModal';
 export * from './XiwaPanel/XiwaPanel';
 export * from './XiwaRating/XiwaRating';
 export * from './XiwaSectionCard/XiwaSectionCard';
