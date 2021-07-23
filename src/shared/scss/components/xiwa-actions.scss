@@ -1,0 +1,18 @@
+.xiwa-actions {
+  display: flex;
+  margin-left: -$spacing;
+  margin-right: -$spacing;
+  align-items: center;
+
+  & > * {
+    margin: $spacing;
+  }
+}
+
+.xiwa-actions--centered {
+  justify-content: center;
+}
+
+.xiwa-actions--to-right {
+  justify-content: flex-end;
+}

@@ -1,0 +1,19 @@
+$xiwa-menu-bar-background-color: $color-ui-alt !important;
+
+.xiwa-menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $spacing;
+  background-color: $xiwa-menu-bar-background-color;
+}
+
+.xiwa-menu-bar__item {
+  padding: $spacing * 1.5 $spacing;
+  color: $color-text-light;
+
+  &:hover,
+  &:focus {
+    color: $color-text-light;
+  }
+}

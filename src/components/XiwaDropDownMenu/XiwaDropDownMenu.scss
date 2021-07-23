@@ -1,0 +1,142 @@
+@import '../../shared/scss/index.scss';
+
+// $xiwa-drop-down-menu-icon: $icon-chevron-down !default;
+
+.xiwa-drop-down-menu {
+	position: relative;
+	display: block;
+	width: 100%;
+
+	&.is-valid {
+        //
+	}
+
+	&.is-invalid {
+        //
+	}
+
+  &.is-hidden {
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+	&::after {
+		// @include align(absolute, right, center);
+    position: absolute;
+    right: 0;
+    top: 50%;
+		display: block;
+		width: $spacing * 2;
+		height: $spacing * 2;
+    margin-top: -$spacing / 2;
+		transform: rotate(90deg);
+    font-size: $font-size-200;
+		content: '\003E';
+		pointer-events: none;
+	}
+}
+
+.xiwa-drop-down-menu--90 {
+  font-size: $font-size-70;
+
+	&::after {
+		width: $spacing;
+		height: $spacing;
+	}
+}
+
+.xiwa-drop-down-menu--max-width-90 {
+	max-width: $spacing * 40;
+}
+
+.xiwa-drop-down-menu--max-width-80 {
+	max-width: $spacing * 24;
+}
+
+.xiwa-drop-down-menu--max-width-70 {
+	max-width: $spacing * 20;
+}
+
+.xiwa-drop-down-menu--max-width-60 {
+	max-width: $spacing * 16;
+}
+
+.xiwa-drop-down-menu__select {
+	position: relative;
+	display: block;
+	padding-right: $spacing * 2;
+	padding-left: $spacing * 1.25;
+	width: 100%;
+	height: $spacing * 4;
+	border: 1px solid $color-ui-90;
+	border-radius: $border-radius-80;
+	background-color: $color-ui-light;
+  font-family: $font-family-sans-serif;
+	font-size: $font-size-80;
+	transition: $transition-100;
+	appearance: none;
+
+  .xiwa-drop-down-menu.is-valid & {
+    border-color: $color-success;
+  }
+
+  .xiwa-drop-down-menu.is-invalid & {
+    border-color: $color-error;
+  }
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+  &:focus-visible {
+    box-shadow: $box-shadow-focus-outset;
+
+    &:active,
+    &:hover {
+        box-shadow: none;
+    }
+  }
+
+	&::-ms-expand {
+		display: none; // NOTE: To hide select control in IE10+.
+	}
+
+	&::-ms-value {
+		background: none; // NOTE: To remove blue background on IE10+ when selected.
+		color: $color-text; // NOTE: To make sure the text is readable on a light background from drop-down-menu when selected.
+	}
+
+	&::placeholder {
+		color: $color-text-grey;
+	}
+
+	.xiwa-drop-down-menu.is-valid &,
+	.xiwa-drop-down-menu.is-invalid & {
+		padding-right: ($spacing * 2 * 2) - (($spacing * 2 - $spacing) / 2);
+		background-position: right $spacing * 2 center;
+		background-repeat: no-repeat;
+	}
+
+	.xiwa-drop-down-menu--90 & {
+		padding-top: 0;
+		padding-right: $spacing;
+		padding-bottom: 0;
+		padding-left: $spacing;
+		height: $spacing * 3;
+		font-size: $font-size-70;
+	}
+
+	.xiwa-drop-down-menu--90.is-valid &,
+	.xiwa-drop-down-menu--90.is-invalid & {
+		padding-right: ($spacing * 2) - (($spacing - $spacing) / 2);
+		background-position: right $spacing center;
+		background-size: $spacing;
+	}
+
+	& option {
+		color: $color-text; // FIX: For IE to make sure all the options are readable and the option does not inherit the text color from the select.
+	}
+}

@@ -1,0 +1,68 @@
+@import '../../shared/scss/index.scss';
+
+.xiwa-content {
+  font-size: $font-size-80;
+}
+
+.xiwa-content--centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.xiwa-content--centering {
+  text-align: center;
+}
+
+.xiwa-content--light {
+  color: $color-text-light;
+}
+
+.xiwa-content--limited-width {
+  max-width: 400px;
+}
+
+h1 {
+  .xiwa-content & {
+      margin-top: $line-height-60 * $font-size-600 / 2;
+      margin-bottom: $line-height-60 * $font-size-600 / 3;
+      font-weight: $font-weight-200;
+      font-size: $font-size-600;
+      line-height: $line-height-70;
+  }
+}
+
+h2 {
+  .xiwa-content & {
+      margin-top: $line-height-70 * $font-size-400 / 2;
+      margin-bottom: $line-height-70 * $font-size-400 / 2;
+      font-weight: $font-weight-200;
+      font-size: $font-size-400;
+      line-height: $line-height-70;
+  }
+}
+
+h3 {
+  .xiwa-content & {
+      margin-top: $line-height-70 * $font-size-300 / 2;
+      margin-bottom: $line-height-60 * $font-size-80 / 2;
+      font-weight: $font-weight-200;
+      font-size: $font-size-200;
+      line-height: $line-height-70;
+  }
+}
+
+p {
+  .xiwa-content & {
+      margin-top: 0;
+      margin-bottom: $line-height-70 * $font-size-100;
+      font-size: $font-size-80;
+  }
+}
+
+ul,
+ol {
+  .xiwa-content & {
+      margin-left: $spacing * 2.5;
+      font-size: $font-size-80;
+  }
+}

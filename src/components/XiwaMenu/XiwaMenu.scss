@@ -1,0 +1,23 @@
+@import '../../shared/scss/index.scss';
+
+:root {
+  --xiwa-menu-spacing: #{$spacing};
+  --xiwa-menu-heading-font-size: #{$font-size-60};
+  --xiwa-menu-item-font-size: #{$font-size-70};
+}
+
+.xiwa-menu__heading {
+  margin-bottom: calc(var(--xiwa-menu-spacing) * 1.5);
+  font-size: var(--xiwa-menu-heading-font-size);
+  text-transform: uppercase;
+}
+
+.xiwa-menu__item {
+  display: block;
+  margin: var(--xiwa-menu-spacing) 0;
+  font-size: var(--xiwa-menu-item-font-size);
+
+  &:focus-visible {
+    box-shadow: $box-shadow-focus-outset-200;
+  }
+}

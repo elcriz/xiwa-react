@@ -1,0 +1,46 @@
+@import '../../shared/scss/index.scss';
+
+:root {
+  @include media(0, $range-hand) {
+      --xiwa-collection-gap: #{$spacing * 2};
+      --xiwa-collection-one-half-template: 1fr;
+      --xiwa-collection-one-third-template: 1fr;
+      --xiwa-collection-one-fourth-template: repeat(2, 1fr);
+  }
+
+  @include media($range-lap, false) {
+      --xiwa-collection-gap: #{$spacing * 4};
+      --xiwa-collection-one-half-template: repeat(2, 1fr);
+      --xiwa-collection-one-third-template: repeat(3, 1fr);
+      --xiwa-collection-one-fourth-template: repeat(4, 1fr);
+  }
+}
+
+.xiwa-collection {
+  display: grid;
+  grid-column-gap: var(--xiwa-collection-gap);
+  grid-row-gap: var(--xiwa-collection-gap);
+  column-gap: var(--xiwa-collection-gap);
+  row-gap: var(--xiwa-collection-gap);
+}
+
+.xiwa-collection--xl {
+  @include media($range-lap, false) {
+      grid-column-gap: calc(var(--xiwa-collection-gap) * 2);
+      grid-row-gap: calc(var(--xiwa-collection-gap) * 2);
+      column-gap: calc(var(--xiwa-collection-gap) * 2);
+      row-gap: calc(var(--xiwa-collection-gap) * 2);
+  }
+}
+
+.xiwa-collection--one-half {
+  grid-template-columns: var(--xiwa-collection-one-half-template);
+}
+
+.xiwa-collection--one-third {
+  grid-template-columns: var(--xiwa-collection-one-third-template);
+}
+
+.xiwa-collection--one-fourth {
+  grid-template-columns: var(--xiwa-collection-one-fourth-template);
+}

@@ -1,0 +1,77 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-app-card-inner-background-color: $color-ui-light !default;
+$xiwa-app-card-inner-border: 1px solid $color-ui-100 !default;
+$xiwa-app-card-information-font-size: $font-size-70 !default;
+$xiwa-app-card-information-color: $color-text-grey !default;
+$xiwa-app-card-icon-container-background-color: $color-ui-200 !default;
+
+.xiwa-app-card {
+  max-width: 100%;
+}
+
+.xiwa-app-card__inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $xiwa-app-card-inner-background-color;
+    border: $xiwa-app-card-inner-border;
+    border-radius: $border-radius-80;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-100;
+    }
+}
+
+.xiwa-app-card__heading {
+    margin-bottom: $spacing / 2;
+
+    @include media($range-hand-l, false) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.xiwa-app-card__description {
+    order: 2;
+    padding: $spacing * 2 $spacing * 2 $spacing * 4;
+
+    @include media($range-hand-l, false) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.xiwa-app-card__information {
+    color: $xiwa-app-card-information-color;
+    font-size: $xiwa-app-card-information-font-size;
+
+    @include media($range-hand-l, false) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.xiwa-app-card__icon-container {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    padding: $spacing * 2;
+    width: 100%;
+    background-color: $xiwa-app-card-icon-container-background-color;
+}
+
+.xiwa-app-card__icon {
+    display: block;
+    max-width: $spacing * 16;
+    border-radius: $border-radius-90;
+}
+
+.xiwa-app-card__rating {
+    margin-top: $spacing;
+}

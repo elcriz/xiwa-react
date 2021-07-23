@@ -1,0 +1,233 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-card-background-color: $color-ui-light !default;
+$xiwa-card-border: 1px solid $color-ui-90 !default;
+$xiwa-card-border-radius: $border-radius-90 !default;
+$xiwa-card-media-background-color: $color-ui !default;
+$xiwa-card-title-font-size: $font-size-200 !default;
+$xiwa-card-90-title-font-size: $font-size-90 !default;
+$xiwa-card-sub-title-font-size: $font-size-70 !default;
+$xiwa-card-excerpt-font-size: $font-size-80 !default;
+
+.xiwa-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $xiwa-card-background-color;
+    border-radius: $xiwa-card-border-radius;
+    box-sizing: border-box;
+
+    @include media($range-lap, false) {
+        max-width: $spacing * 60;
+    }
+}
+
+.xiwa-card--centered {
+    text-align: center;
+}
+
+.xiwa-card--elevated {
+    border: none;
+    box-shadow: $box-shadow-80;
+}
+
+.xiwa-card__actions {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.xiwa-card__primary-action {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    min-width: 0;
+
+    &::before {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        border: $xiwa-card-border;
+        border-radius: $xiwa-card-border-radius;
+        transition: $transition-100;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &:hover,
+    &:focus-visible {
+        &::before {
+            box-shadow: $box-shadow-100;
+            border-radius: $xiwa-card-border-radius;
+        }
+    }
+}
+
+.xiwa-card__media {
+    position: relative;
+    align-self: flex-start;
+    overflow: hidden;
+    width: 100%;
+    background-color: $xiwa-card-media-background-color;
+    border-top-left-radius: $xiwa-card-border-radius;
+    border-top-right-radius: $xiwa-card-border-radius;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    user-select: none;
+
+    &::before {
+        z-index: -1;
+        display: block;
+        padding-bottom: 56.25%;
+        width: 100%;
+        content: '';
+    }
+
+    & > img,
+    & > picture > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        transition: $transition-100;
+
+        .xiwa-card__primary-action:hover &,
+        .xiwa-card__primary-action:focus & {
+            width: 105%;
+            height: 105%;
+            max-width: 105%;
+            margin-top: -2.5%;
+            margin-left: -2.5%;
+        }
+    }
+}
+
+.xiwa-card__header {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    padding: $spacing * 2;
+
+    .xiwa-card--centered & {
+        flex-direction: column;
+    }
+}
+
+.xiwa-card__icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-right: 12px;
+    max-width: $spacing * 4;
+
+    .xiwa-card--centered & {
+        align-self: stretch;
+        margin-right: 0;
+        margin-bottom: $spacing * 2;
+        max-width: none;
+
+        & > img,
+        & > svg {
+            max-height: $spacing * 8;
+        }
+    }
+}
+
+.xiwa-card__heading-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-self: flex-start;
+    align-items: stretch;
+    justify-content: center;
+
+    .xiwa-card--centered & {
+      width: 100%;
+    }
+}
+
+.xiwa-card__title {
+    margin-top: 0;
+    margin-bottom: $spacing / 2;
+    color: $color-text;
+    font-size: $xiwa-card-title-font-size;
+    font-weight: $font-weight-200;
+    line-height: $line-height-70;
+    word-break: break-word;
+
+    .xiwa-card--90 & {
+        font-size: $xiwa-card-90-title-font-size;
+        line-height: $line-height-70;
+    }
+
+    .xiwa-card__primary-action & {
+        position: relative;
+        padding-right: $spacing * 2;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: $spacing;
+            padding-left: $spacing;
+            content: '\003E';
+            font-weight: $font-weight-100;
+        }
+    }
+
+    .xiwa-card--centered & {
+        padding-right: 0;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.xiwa-card__sub-title {
+    color: $color-text-grey;
+    font-size: $xiwa-card-sub-title-font-size;
+    font-weight: $font-weight-100;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+
+.xiwa-card__excerpt {
+    margin-top: $spacing / 2;
+    margin-bottom: 0;
+    font-size: $xiwa-card-excerpt-font-size;
+
+    .xiwa-card--90 & {
+        color: $color-text-grey;
+    }
+}
+
+.xiwa-card__supplemental-actions {
+    display: flex;
+    justify-self: flex-end;
+    padding: 0 $spacing * 2 $spacing;
+
+    .xiwa-card--centered & {
+        align-items: center;
+        justify-content: center;
+        padding: $spacing;
+    }
+
+    > a {
+        font-size: $font-size-90;
+    }
+}

@@ -1,0 +1,37 @@
+@import '../../shared/scss/index.scss';
+
+:root {
+  @include media(0, $range-hand) {
+      --xiwa-band-padding: #{$spacing * 2} 0;
+      --xiwa-band-padding-xl: #{$spacing * 4} 0;
+      --xiwa-band-top-padding-xl: #{$spacing * 4};
+      --xiwa-band-bottom-padding-xl: #{$spacing * 4};
+  }
+
+  @include media($range-lap, false) {
+      --xiwa-band-padding: #{$spacing * 4} 0;
+      --xiwa-band-padding-xl: #{$spacing * 8} 0;
+      --xiwa-band-top-padding-xl: #{$spacing * 8};
+      --xiwa-band-bottom-padding-xl: #{$spacing * 8};
+  }
+}
+
+.xiwa-band {
+  padding: var(--xiwa-band-padding);
+}
+
+.xiwa-band--xl {
+  padding: var(--xiwa-band-padding-xl);
+}
+
+.xiwa-band--top-xl {
+  padding-top: var(--xiwa-band-bottom-padding-xl);
+}
+
+.xiwa-band--bottom-xl {
+  padding-bottom: var(--xiwa-band-bottom-padding-xl);
+}
+
+.xiwa-band--alt {
+  background-color: $color-ui-100;
+}

@@ -1,0 +1,38 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-container-border-radius: $border-radius-90 !default;
+$xiwa-container-border: 1px solid $color-ui-90 !default;
+
+.xiwa-container {
+    max-width: 1280px;
+    padding: 0 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: $xiwa-container-border-radius;
+}
+
+.xiwa-container--with-border {
+  border: $xiwa-container-border;
+}
+
+.xiwa-container--alt {
+  background-color: $color-ui-100;
+}
+
+.xiwa-container--with-top-margin {
+  @include media(0, $range-hand) {
+    margin-top: $spacing * 2;
+  }
+  @include media($range-lap, false) {
+    margin-top: $spacing * 6;
+  }
+}
+
+.xiwa-container--with-bottom-margin {
+  @include media(0, $range-hand) {
+    margin-bottom: $spacing * 2;
+  }
+  @include media($range-lap, false) {
+    margin-bottom: $spacing * 6;
+  }
+}

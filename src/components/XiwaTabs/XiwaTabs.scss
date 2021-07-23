@@ -1,0 +1,90 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-tabs-border: 1px solid $color-ui-90 !default;
+
+.xiwa-tabs__selectors {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: $xiwa-tabs-border;
+}
+
+.xiwa-tabs__selector {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  margin-bottom: -1px;
+  padding: $spacing * 1.5 $spacing * 2 $spacing * 1.625;
+  background: none;
+  color: $color-secondary;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: relative;
+    padding: $spacing $spacing * 2;
+    transition: $transition-100;
+    border-radius: $border-radius-60;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+
+    span {
+      background-color: $color-ui-200;
+    }
+  }
+
+  &.is-current {
+    border-left: $xiwa-tabs-border;
+    border-right: $xiwa-tabs-border;
+    border-bottom: 1px solid $color-ui-light;
+    color: $color-text;
+
+    span {
+      background-color: $color-ui-100;
+
+      &::before {
+        position: absolute;
+        left: 50%;
+        bottom: -4px;
+        display: block;
+        content: '';
+        width: 8px;
+        height: 8px;
+        margin-left: -4px;
+        transform: rotate(45deg);
+        background-color: $color-ui-100;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+}
+
+.xiwa-tabs__container {
+  padding: $spacing * 2;
+  border-left: $xiwa-tabs-border;
+  border-right: $xiwa-tabs-border;
+  border-bottom: $xiwa-tabs-border;
+  border-bottom-left-radius: $border-radius-80;
+  border-bottom-right-radius: $border-radius-80;
+}
+
+.xiwa-tabs__panel {
+  height: 0;
+  overflow: hidden;
+
+  &.is-current {
+    height: auto;
+  }
+}

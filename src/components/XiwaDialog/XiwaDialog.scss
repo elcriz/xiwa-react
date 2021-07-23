@@ -1,0 +1,81 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-dialog-border-radius: $border-radius-80 !default;
+
+$xiwa-dialog-background-color: $color-info-200 !default;
+$xiwa-dialog-color: $color-info-90 !default;
+$xiwa-dialog-icon-fill: $color-info-100 !default;
+
+$xiwa-dialog-success-background-color: $color-success-200 !default;
+$xiwa-dialog-success-color: $color-success-90 !default;
+$xiwa-dialog-success-icon-fill: $color-success-100 !default;
+
+$xiwa-dialog-warning-background-color: $color-warning-200 !default;
+$xiwa-dialog-warning-color: $color-warning-90 !default;
+$xiwa-dialog-warning-icon-fill: $color-warning-100 !default;
+
+$xiwa-dialog-error-background-color: $color-error-180 !default;
+$xiwa-dialog-error-color: $color-error-90 !default;
+$xiwa-dialog-error-icon-fill: $color-error-100 !default;
+
+.xiwa-dialog {
+	display: flex;
+	align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $spacing * 2;
+	border-radius: $xiwa-dialog-border-radius;
+  box-sizing: border-box;
+	background-color: $xiwa-dialog-background-color;
+	color: $xiwa-dialog-color;
+
+	@include media(0, $range-hand) {
+		padding: $spacing $spacing * 1.5;
+	}
+	@include media($range-lap, false) {
+		padding: $spacing $spacing * 2;
+    max-width: 800px;
+	}
+}
+
+.xiwa-dialog--success {
+	background-color: $xiwa-dialog-success-background-color;
+	color: $xiwa-dialog-success-color;
+}
+
+.xiwa-dialog--warning {
+	background-color: $xiwa-dialog-warning-background-color;
+	color: $xiwa-dialog-warning-color;
+}
+
+.xiwa-dialog--error {
+	background-color: $xiwa-dialog-error-background-color;
+	color: $xiwa-dialog-error-color;
+}
+
+.xiwa-dialog__icon {
+	flex-shrink: 0;
+	margin-right: $spacing * 2;
+	fill: $xiwa-dialog-icon-fill;
+
+	@include media(0, $range-hand) {
+		width: $spacing * 4;
+		height: $spacing * 4;
+	}
+	@include media($range-lap, false) {
+		width: $spacing * 5;
+		height: $spacing * 5;
+	}
+
+	.xiwa-dialog--success & {
+		fill: $xiwa-dialog-success-icon-fill;
+	}
+
+	.xiwa-dialog--warning & {
+		fill: $xiwa-dialog-warning-icon-fill;
+	}
+
+	.xiwa-dialog--error & {
+		fill: $xiwa-dialog-error-icon-fill;
+	}
+}

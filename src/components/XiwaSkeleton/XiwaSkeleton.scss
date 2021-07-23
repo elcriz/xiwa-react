@@ -1,0 +1,52 @@
+@import '../../shared/scss/index.scss';
+
+:root {
+  --xiwa-skeleton-main-width: 60vw;
+  --xiwa-skeleton-aspect-ratio: 315 / 1060;
+}
+
+$xiwa-skeleton-background-color: $color-ui-70 !default;
+
+@keyframes pulsate {
+  0% {
+      opacity: .5;
+  }
+  50% {
+      opacity: 1.0;
+  }
+  100% {
+      opacity: .5;
+  }
+}
+
+.xiwa-skeleton {
+  display: inline-block;
+  background-color: $xiwa-skeleton-background-color;
+  border-radius: $border-radius-70;
+  animation: pulsate .75s ease-out;
+  animation-iteration-count: infinite;
+  opacity: .5;
+}
+
+.xiwa-skeleton--text {
+  width: 75%;
+  height: $spacing * 1.5;
+}
+
+.xiwa-skeleton--figure {
+  width: 100%;
+  height: 100%;
+}
+
+.xiwa-skeleton--full-width {
+  width: 100%;
+}
+
+.xiwa-skeleton--full-height {
+  height: 100%;
+}
+
+.xiwa-skeleton--empty {
+  width: 100%;
+  height: calc(var(--xiwa-skeleton-main-width) * var(--xiwa-skeleton-aspect-ratio));
+}

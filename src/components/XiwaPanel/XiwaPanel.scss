@@ -1,0 +1,152 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-panel-background-color: $color-ui-light !default;
+$xiwa-panel-border-radius: $border-radius-90 !default;
+$xiwa-panel-loading-indicator-background-color: $color-primary !default;
+$xiwa-panel-content-border: 1px solid $color-ui-100 !default;
+$xiwa-panel-actions-border: 1px solid $color-ui-100 !default;
+
+.xiwa-panel {
+  position: relative;
+  margin: $spacing;
+  background-color: $xiwa-panel-background-color;
+  border-radius: $xiwa-panel-border-radius;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include media($range-hand, false) {
+    min-width: 440px;
+  }
+}
+
+.xiwa-panel--sticky-actions {
+  margin-bottom: $spacing * 10;
+}
+
+.xiwa-panel--loading {
+  cursor: wait;
+
+  &:not(.xiwa-panel--sticky-actions) {
+    &::before {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: $color-ui-200;
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: $xiwa-panel-loading-indicator-background-color;
+      animation-name: loadingBar;
+      animation-duration: 2.40868s;
+      animation-iteration-count: infinite;
+      will-change: transform;
+      content: '';
+    }
+  }
+}
+
+.xiwa-panel--elevated {
+  box-shadow: $box-shadow-70;
+}
+
+.xiwa-panel--sticky {
+  @include media(0, $range-palm) {
+    position: fixed;
+    left: 0;
+    top: $spacing * 4.75;
+    bottom: 0;
+    right: 0;
+    padding-bottom: $spacing * 10;
+    border-radius: $border-radius-80;
+  }
+}
+
+.xiwa-panel__header {
+  padding: $spacing * 1.75 $spacing * 2 $spacing * 0.875;
+
+  .xiwa-panel--centered & {
+    text-align: center;
+  }
+}
+
+.xiwa-panel__heading {
+  margin: 0 0 $spacing;
+  font-size: $font-size-200;
+
+  > span {
+    padding: 0 $spacing;
+  }
+}
+
+.xiwa-panel__sub-heading {
+  margin: 0 0 $spacing;
+  color: $color-text-grey;
+}
+
+.xiwa-panel__content {
+  padding: $spacing;
+  border-top: $xiwa-panel-content-border;
+}
+
+.xiwa-panel__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing 0;
+  border-top: $xiwa-panel-actions-border;
+  box-sizing: border-box;
+  transition: $transition-100;
+
+  > * {
+    margin: $spacing;
+  }
+
+  .xiwa-panel--sticky & {
+    background-color: $color-ui-light;
+
+    @include media(0, $range-palm) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+  .xiwa-panel--sticky-actions & {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($xiwa-panel-background-color, .95);
+    box-shadow: $box-shadow-90;
+  }
+
+  .xiwa-panel--sticky-actions.xiwa-panel--loading & {
+    &::after {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: $xiwa-panel-loading-indicator-background-color;
+      animation-name: loadingBar;
+      animation-duration: 2.40868s;
+      animation-iteration-count: infinite;
+      will-change: transform;
+      content: '';
+    }
+  }
+}
+
+.xiwa-panel__actions--justified {
+  justify-content: space-between;
+}

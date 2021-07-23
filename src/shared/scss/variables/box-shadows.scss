@@ -1,0 +1,9 @@
+$box-shadow-70: 0px 0px $spacing / 2 rgba($color-ui-dark, .15);
+$box-shadow-80: 0px 0px $spacing rgba($color-ui-dark, .15);
+$box-shadow-90: 0px 0px $spacing * 2 rgba($color-ui-dark, .15);
+$box-shadow-100: 0px 0px $spacing * 4 rgba($color-ui-dark, .15);
+$box-shadow-200: 0px 0px $spacing * 4 rgba($color-ui-dark, .5);
+
+$box-shadow-focus-outset: 0 0 0 2px $color-primary !default;
+$box-shadow-focus-outset-200: 0 0 0 $spacing / 2 $color-primary !default;
+$box-shadow-focus-inset: inset 0 0 0 2px $color-primary !default;

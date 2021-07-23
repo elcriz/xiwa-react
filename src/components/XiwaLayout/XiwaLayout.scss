@@ -1,0 +1,129 @@
+@import '../../shared/scss/index.scss';
+
+:root {
+  --xiwa-layout-spacing: #{$spacing};
+}
+
+.xiwa-layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-2 * var(--xiwa-layout-spacing) * 2);
+  box-sizing: border-box;
+}
+
+.xiwa-layout--xl {
+  margin-left: calc(-2 * (var(--xiwa-layout-spacing) * 4));
+}
+
+.xiwa-layout__column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-left: calc(var(--xiwa-layout-spacing) * 4);
+  box-sizing: border-box;
+  width: 100%;
+
+  .xiwa-layout--xl & {
+      padding-left: calc(var(--xiwa-layout-spacing) * 8);
+  }
+
+  @include media(0, $range-hand) {
+      &:not(.xiwa-layout__column--one-fourth) {
+        &:not(:first-child) {
+            padding-top: calc(var(--xiwa-layout-spacing) * 2);
+
+            .xiwa-layout--xl & {
+                padding-top: calc(var(--xiwa-layout-spacing) * 6);
+            }
+        }
+      }
+  }
+}
+
+.xiwa-layout__column--primary {
+  order: 0;
+}
+
+.xiwa-layout__column--secondary {
+  order: 1;
+
+@include media(0, $range-hand) {
+  padding-top: calc(var(--xiwa-layout-spacing) * 4);
+}
+}
+
+.xiwa-layout__column--one-half {
+  @include media(0, $range-hand) {
+      width: 100%;
+  }
+
+  @include media($range-lap, false) {
+      width: 50%;
+  }
+}
+
+.xiwa-layout__column--one-third {
+  @include media(0, $range-hand) {
+      width: 100%;
+  }
+
+  @include media($range-lap, false) {
+      width: 33.333%;
+  }
+}
+
+.xiwa-layout__column--two-thirds {
+  @include media(0, $range-hand) {
+      width: 100%;
+  }
+
+  @include media($range-lap, false) {
+      width: 66.666%;
+  }
+}
+
+.xiwa-layout__column--one-fourth {
+@include media(0, $range-palm) {
+    width: 100%;
+}
+
+@include media(0, $range-hand) {
+  padding-left: 0;
+  padding-bottom: calc(var(--xiwa-layout-spacing) * 4);
+}
+
+@include media($range-hand) {
+  width: 50%;
+}
+
+@include media($range-lap, false) {
+    width: 25%;
+}
+}
+
+.xiwa-layout__column--with-bottom-padding {
+  margin-bottom: calc(var(--xiwa-layout-spacing) * 2);
+
+  .xiwa-layout--large-gap & {
+      margin-bottom: calc(var(--xiwa-layout-spacing) * 4);
+  }
+}
+
+.xiwa-layout__column--to-middle {
+  justify-content: center;
+}
+
+.xiwa-layout__column--to-bottom {
+  justify-content: flex-end;
+}
+
+.xiwa-layout__column--to-right {
+  @include media($range-lap, false) {
+      align-items: flex-end;
+  }
+}
+
+.xiwa-layout__column--centered {
+  align-items: center;
+}

@@ -1,0 +1,27 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-image-background-color: $color-ui-100 !default;
+
+.xiwa-image {
+    max-width: 100%;
+    background-color: $xiwa-image-background-color;
+}
+
+.xiwa-image--circular {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.xiwa-image--cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.xiwa-image--hidden-on-hand {
+    @include media(0, $range-hand) {
+        display: none;
+    }
+}

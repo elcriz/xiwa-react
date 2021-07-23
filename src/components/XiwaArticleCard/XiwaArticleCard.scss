@@ -1,0 +1,165 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-article-card-inner-background: linear-gradient(0.25turn,
+    rgba($color-primary, .75),
+    rgba($color-primary, .25)) !default;
+$xiwa-article-card-inner-border: 1px solid $color-ui-90 !default;
+$xiwa-article-card-inverted-color: $color-text-light !default;
+$xiwa-article-card-heading-font-size: $font-size-200 !default;
+$xiwa-article-card-heading-stretch-background-font-size: $font-size-500 !default;
+$xiwa-article-card-heading-stretch-background-line-height: $line-height-400 !default;
+$xiwa-article-card-heading-line-height: $line-height-200 !default;
+$xiwa-article-card-description-font-weight: $font-weight-90 !default;
+$xiwa-article-card-description-font-size: $font-size-90 !default;
+
+.xiwa-article-card--stretch-background {
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: $border-radius-90;
+
+    &:hover {
+        box-shadow: $box-shadow-100;
+    }
+
+    @include media(0, $range-lap-s) {
+        margin: 0 0 $spacing * 4;
+    }
+
+    @include media($range-lap-m, false) {
+        height: 100%;
+        margin: 0 $spacing * 4 $spacing * 4 0;
+    }
+}
+
+.xiwa-article-card__inner {
+    position: relative;
+    padding: 0;
+    border-radius: $border-radius-80;
+    box-sizing: border-box;
+
+    .xiwa-article-card--inverted & {
+        color: $xiwa-article-card-inverted-color;
+
+        @include media($range-lap-m, false) {
+            align-content: flex-end;
+        }
+    }
+
+    .xiwa-article-card--with-border & {
+        @include media($range-hand-m, false) {
+            box-sizing: border-box;
+            padding: 0;
+            border: $xiwa-article-card-inner-border;
+            border-radius: $border-radius-90;
+            overflow: hidden;
+
+            &:hover,
+            &:focus {
+                box-shadow: $box-shadow-100;
+            }
+        }
+    }
+
+    .xiwa-article-card--stretch-background & {
+        height: 100%;
+        width: 100%;
+        background: $xiwa-article-card-inner-background;
+        overflow: hidden;
+
+        @include media(0, $range-lap-s) {
+            padding: $spacing * 4;
+        }
+
+        @include media($range-lap-m, false) {
+            padding: $spacing * 2;
+        }
+    }
+
+    @include media(0, $range-hand-s) {
+        display: block;
+        padding-left: calc(25% + #{$spacing * 2});
+    }
+
+    @include media($range-hand-m, false) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.xiwa-article-card__heading {
+    order: 2;
+    margin-top: $spacing / 2;
+    margin-bottom: $spacing;
+    font-size: $xiwa-article-card-heading-font-size;
+    line-height: $xiwa-article-card-heading-line-height;
+
+    .xiwa-article-card--with-border & {
+        @include media($range-lap-m, false) {
+            padding-left: $spacing * 2;
+            padding-right: $spacing * 2;
+        }
+    }
+
+    .xiwa-article-card--stretch-background & {
+        margin-bottom: $spacing * 2;
+        font-size: $xiwa-article-card-heading-stretch-background-font-size;
+        line-height: $xiwa-article-card-heading-stretch-background-line-height;
+
+        @include media($range-lap-m, false) {
+            width: 75%;
+        }
+    }
+}
+
+.xiwa-article-card__description {
+    order: 3;
+    font-weight: $xiwa-article-card-description-font-weight;
+
+    .xiwa-article-card--with-border & {
+        @include media($range-lap-m, false) {
+            padding: 0 $spacing * 2 $spacing * 2;
+        }
+    }
+
+    .xiwa-article-card--stretch-background & {
+        @include media($range-lap-m, false) {
+            width: 75%;
+        }
+    }
+}
+
+.xiwa-article-card__description--shortened-single-line {
+    @include media($range-hand-m, false) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.xiwa-article-card__image {
+    order: 1;
+    display: block;
+    max-width: 100%;
+    margin-bottom: $spacing * 2;
+    border-radius: $border-radius-90;
+
+    .xiwa-article-card--with-border & {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .xiwa-article-card--inverted:hover &,
+    .xiwa-article-card--inverted:focus & {
+        box-shadow: 0px 0px $spacing * 2 rgba($color-ui-light, .25);
+    }
+
+    @include media(0, $range-hand-s) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 25%;
+        border-radius: $border-radius-80;
+    }
+}

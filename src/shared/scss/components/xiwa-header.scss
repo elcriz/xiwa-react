@@ -1,0 +1,35 @@
+$xiwa-heading-font-size: $font-size-500 !default;
+$xiwa-sub-heading-font-size: $font-size-100 !default;
+$xiwa-sub-heading-font-color: $color-text-grey !default;
+$xiwa-header-90-heading-font-size: $font-size-200 !default;
+
+.xiwa-header {
+    margin-bottom: $spacing * 2;
+}
+
+.xiwa-header--90 {
+    margin-bottom: $spacing * 1.5;
+}
+
+.xiwa-header--centered {
+    text-align: center;
+}
+
+.xiwa-header__heading {
+    margin-bottom: $line-height-70 * $xiwa-heading-font-size / 4;
+    font-size: $xiwa-heading-font-size;
+    font-weight: $font-weight-200;
+    line-height: $line-height-70;
+
+    .xiwa-header--90 & {
+        font-size: $xiwa-header-90-heading-font-size;
+    }
+}
+
+.xiwa-header__sub-heading {
+    margin-bottom: $line-height-70 * $xiwa-sub-heading-font-size / 2;
+    color: $xiwa-sub-heading-font-color;
+    font-size: $xiwa-sub-heading-font-size;
+    font-weight: $font-weight-100;
+    line-height: $line-height-70;
+}

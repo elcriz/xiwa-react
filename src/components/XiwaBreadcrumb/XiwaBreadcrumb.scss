@@ -1,0 +1,43 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-breadcrumb-font-size: $font-size-80 !default;
+
+.xiwa-breadcrumb {
+  font-size: $xiwa-breadcrumb-font-size;
+
+  @include media(0, $range-hand) {
+    margin-top: 0;
+  }
+}
+
+.xiwa-breadcrumb__list {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+.xiwa-breadcrumb__list-item {
+  position: relative;
+  padding-right: $spacing;
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  &:not(:last-child) {
+    &::after {
+      width: $spacing;
+      padding-left: $spacing / 2;
+      content: '\003E';
+    }
+  }
+
+  a {
+    opacity: .5;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@import '../../shared/scss/index.scss';
+
+/**
+ * @see https://www.w3.org/TR/wai-aria-practices/examples/disclosure/disclosure-faq.html
+ **/
+
+$xiwa-disclosure-list-border: 1px solid $color-ui-90 !default;
+$xiwa-disclosure-list-description-font-size: $font-size-80 !default;
+
+.xiwa-disclosure-list {
+  margin-top: -$spacing;
+  margin-bottom: -$spacing * 2;
+
+  &>* {
+
+    // Angular fix
+    dt {
+      border-top: $xiwa-disclosure-list-border !important;
+    }
+
+    &:first-child {
+      dt {
+        border-top: none !important;
+      }
+    }
+  }
+}
+
+.xiwa-disclosure-list__term {
+  border-top: $xiwa-disclosure-list-border;
+
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.xiwa-disclosure-list__anchor {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: $spacing * 2 $spacing * 2 $spacing * 2 0;
+  border: none;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-200;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-secondary;
+    text-decoration: underline;
+  }
+}
+
+.xiwa-disclosure-list__description {
+  position: relative;
+  margin-left: 0;
+  padding: 0 0 $spacing * 2 0;
+  box-sizing: border-box;
+  font-size: $xiwa-disclosure-list-description-font-size;
+
+  &::before {
+    position: absolute;
+    top: -$spacing * 3.5;
+    right: 0;
+    display: block;
+    width: $spacing;
+    height: $spacing;
+    content: '\003E';
+    color: $color-text;
+    line-height: $spacing;
+    transform: rotate(89deg);
+    transition: transform 200ms;
+  }
+
+  &:not(:target) {
+    height: 0;
+    padding: 0;
+    color: transparent;
+    line-height: 0;
+
+    .xiwa-content>* {
+      height: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &:target {
+    .xiwa-content>*:first-child {
+      margin-top: -$spacing / 2;
+    }
+
+    &::before {
+      transform: rotate(-89deg) translateY(0) translateX(0);
+    }
+  }
+}

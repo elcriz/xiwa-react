@@ -1,0 +1,50 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-box-border: 1px solid $color-ui-90 !default;
+$xiwa-box-border-radius: $border-radius-90 !default;
+
+:root {
+    @include media(0, $range-hand) {
+        --xiwa-box-padding: #{$spacing * 2};
+    }
+
+    @include media($range-lap, false) {
+        --xiwa-box-padding: #{$spacing * 4};
+    }
+}
+
+.xiwa-box {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.xiwa-box--with-border {
+    padding: $spacing * 2;
+    border: $xiwa-box-border;
+    border-radius: $xiwa-box-border-radius;
+}
+
+.xiwa-box--with-left-padding {
+    padding-left: var(--xiwa-box-padding);
+}
+
+.xiwa-box--with-right-padding {
+    padding-right: var(--xiwa-box-padding);
+}
+
+.xiwa-box--with-top-padding {
+    @include media($range-lap, false) {
+        padding-top: calc(var(--xiwa-box-padding) * 2);
+
+        &.xiwa-box--90 {
+            padding-top: $spacing * 2;
+        }
+    }
+}
+
+.xiwa-box--with-bottom-padding {
+    @include media($range-lap, false) {
+        padding-bottom: calc(var(--xiwa-box-padding) * 2);
+    }
+}

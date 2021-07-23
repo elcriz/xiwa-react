@@ -1,0 +1,92 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-link-color: $color-secondary !default;
+$xiwa-link-alt-color: $color-primary !default;
+$xiwa-link-discrete-hover-color: $xiwa-link-color;
+
+.xiwa-link {
+    position: relative;
+    color: $xiwa-link-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+        &::before {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: $xiwa-link-color;
+            content: '';
+        }
+    }
+
+    &:focus-visible {
+      box-shadow: $box-shadow-focus-outset-200;
+
+      &::before {
+        display: none;
+      }
+    }
+}
+
+.xiwa-link--alt {
+    color: $xiwa-link-alt-color !important;
+
+    &:hover,
+    &:focus {
+        &::before {
+            background: $xiwa-link-alt-color !important;
+        }
+    }
+}
+
+.xiwa-link--discrete {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        color: $xiwa-link-discrete-hover-color !important;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.xiwa-link--with-pointer {
+    &::after {
+        width: $spacing;
+        padding-left: $spacing;
+        content: '\003E';
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            width: calc(100% - #{$spacing * 2});
+        }
+    }
+}
+
+button.xiwa-link {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: $font-family-sans-serif;
+}
+
+.xiwa-link__icon {
+  &:first-child {
+    margin-right: $spacing;
+  }
+
+  &:last-child {
+    margin-left: $spacing;
+  }
+}

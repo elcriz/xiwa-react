@@ -1,0 +1,53 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-section-card-inner-background-color: $color-ui-light !default;
+$xiwa-section-card-description-color: $color-text-grey !default;
+$xiwa-section-card-heading-font-size: $font-size-90 !default;
+$xiwa-section-card-description-font-size: $font-size-80 !default;
+$xiwa-section-card-image-width: $spacing * 7 !default;
+
+.xiwa-section-card__inner {
+    display: flex;
+    align-items: center;
+    padding: $spacing * 2 $spacing;
+    background-color: $xiwa-section-card-inner-background-color;
+    border-radius: $border-radius-80;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-100;
+    }
+}
+
+.xiwa-section-card__content {
+    order: 2;
+}
+
+.xiwa-section-card__heading {
+    position: relative;
+    display: inline;
+    padding-right: $spacing * 2;
+    font-size: $xiwa-section-card-heading-font-size;
+
+    &::after {
+        position: absolute;
+        right: 0;
+        top: $spacing / 4;
+        content: '>';
+        font-weight: $font-weight-100;
+    }
+}
+
+.xiwa-section-card__description {
+    margin-top: $spacing / 2;
+    color: $xiwa-section-card-description-color;
+    font-size: $xiwa-section-card-description-font-size;
+    text-decoration: none;
+}
+
+.xiwa-section-card__image {
+    order: 1;
+    display: block;
+    width: $xiwa-section-card-image-width;
+    margin-right: $spacing * 2;
+}

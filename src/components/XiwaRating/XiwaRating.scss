@@ -1,0 +1,24 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-rating-star-color: $color-ui-100 !default;
+$xiwa-rating-star-ticked-color: $color-tertiary !default;
+
+.xiwa-rating {
+    display: flex;
+}
+
+.xiwa-rating__star {
+    position: relative;
+    display: block;
+    margin-right: $spacing * 2;
+    color: $xiwa-rating-star-color;
+
+    &::after {
+        position: absolute;
+        content: '\2605'; // Star icon
+    }
+}
+
+.xiwa-rating__star--ticked {
+    color: $xiwa-rating-star-ticked-color;
+}
