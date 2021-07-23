@@ -1,3 +1,5 @@
+import { addParameters } from '@storybook/client-api';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   layout: 'centered',
@@ -7,4 +9,8 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
+
+addParameters({
+  viewMode: 'docs',
+});
