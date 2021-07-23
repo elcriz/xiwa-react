@@ -11,6 +11,16 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook public",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d storybook-static"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "^6.3.5",
     "@storybook/addon-docs": "^6.3.5",
@@ -22,6 +32,7 @@
     "@storybook/react": "^6.3.5",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "css-loader": "^6.2.0",
+    "gh-pages": "^3.1.0",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.1.0"
@@ -40,14 +51,6 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.4",
     "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [

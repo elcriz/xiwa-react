@@ -1,6 +1,5 @@
 import React from 'react';
 import { XiwaMenu } from './XiwaMenu';
-import { Container } from '../../shared/components/Container';
 
 export default {
   title: 'Components/XiwaMenu',

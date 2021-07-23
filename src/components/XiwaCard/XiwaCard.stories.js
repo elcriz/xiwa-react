@@ -1,6 +1,5 @@
 import React from 'react';
 import { XiwaCard } from './XiwaCard';
-import { Container } from '../../shared/components/Container';
 import exampleImageFile from '../../shared/assets/article-example-01.png';
 import exampleIconFile from '../../shared/assets/section-example-01.png';
 
