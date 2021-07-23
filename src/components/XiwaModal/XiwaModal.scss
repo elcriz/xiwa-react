@@ -1,0 +1,106 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-modal-background-color: rgba(0, 0, 0, 0.25) !default;
+$xiwa-modal-inner-background-color: $color-ui-light !default;
+$xiwa-modal-content-border: 1px solid $color-ui-80 !default;
+$xiwa-modal-button-close-color: $color-ui-light !default;
+
+.xiwa-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $xiwa-modal-background-color;
+    z-index: 1000;
+}
+
+.xiwa-modal__inner {
+    position: absolute;
+    background-color: $xiwa-modal-inner-background-color;
+    border-radius: $border-radius-70;
+    box-shadow: $box-shadow-100;
+    overflow: hidden;
+
+    @include media(0, $range-hand-l) {
+        top: $spacing * 2;
+        bottom: $spacing * 2;
+        left: $spacing * 2;
+        right: $spacing * 2;
+    }
+
+    @include media($range-lap-s, $range-desk-s) {
+        left: $spacing * 10;
+        right: $spacing * 10;
+    }
+
+    @include media($range-lap-s, false) {
+        top: $spacing * 10;
+        bottom: $spacing * 10;
+    }
+
+    @include media($range-desk-m, false) {
+        left: auto;
+        right: auto;
+        width: 1264px;
+        margin: $spacing * 2 auto;
+    }
+}
+
+.xiwa-modal__header {
+    text-align: center;
+}
+
+.xiwa-modal__heading {
+    margin: $spacing * 2;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-300;
+    font-weight: $font-weight-200;
+    line-height: $line-height-200;
+}
+
+.xiwa-modal__content {
+    position: absolute;
+    top: $spacing * 7;
+    bottom: $spacing * 9;
+    width: 100%;
+    overflow-y: auto;
+    border-top: $xiwa-modal-content-border;
+    border-bottom: $xiwa-modal-content-border;
+}
+
+.xiwa-modal--with-content-padded .xiwa-modal__content {
+    padding: $spacing * 2;
+    box-sizing: border-box;
+}
+
+.xiwa-modal__actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing;
+}
+
+.xiwa-modal__actions--with-single-action {
+    justify-content: center;
+}
+
+.xiwa-modal__button {
+    margin: $spacing;
+}
+
+.xiwa-modal__button--close {
+    position: absolute;
+    top: $spacing * 1.5;
+    right: $spacing;
+    display: block;
+    margin: 0;
+    color: $xiwa-modal-button-close-color;
+}
