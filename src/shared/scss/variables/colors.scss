@@ -1,67 +1,67 @@
 // Descriptive colors (do not use directly)
-$color-black: rgb(0, 0, 0) !default;
-$color-grey: rgb(236, 236, 236)!default;
-$color-dark-grey: rgb(100, 100, 100) !default;
-$color-green: rgb(82, 174, 50) !default; // Van Dijk green
-$color-purple: rgb(233, 0, 82) !default; // Learnspace purple (hotpink)
-$color-van-dijk-purple: rgb(57, 0, 60) !default; // Van Dijk/Catalogus purple
-$color-yellow: rgb(255, 194, 0) !default;
-$color-red: rgb(200, 0, 0) !default;
-$color-blue: rgb(0, 60, 150) !default;
-$color-white: rgb(255, 255, 255) !default;
+$color-black: rgb(0, 0, 0);
+$color-grey: rgb(236, 236, 236);
+$color-dark-grey: rgb(100, 100, 100);
+$color-green: rgb(82, 174, 50); // Van Dijk green
+$color-purple: rgb(233, 0, 82); // Learnspace purple (hotpink)
+$color-van-dijk-purple: rgb(103, 36, 131); // Van Dijk/Catalogus purple
+$color-yellow: rgb(255, 194, 0);
+$color-red: rgb(200, 0, 0);
+$color-blue: rgb(0, 60, 150);
+$color-white: rgb(255, 255, 255);
 
 // Functional colors
 // -- Hierarchical colors
-$color-primary: $color-purple !default;
-$color-secondary: $color-green !default;
-$color-tertiary: $color-yellow !default;
-$color-quartiary: $color-grey !default;
+$color-primary: $color-purple;
+$color-secondary: $color-green;
+$color-tertiary: $color-yellow;
+$color-quartiary: $color-grey;
 
 // -- Typography colors
-$color-heading: $color-black !default;
-$color-text: $color-black !default;
-$color-text-grey: $color-dark-grey !default;
-$color-text-light: $color-white !default;
+$color-heading: $color-black;
+$color-text: $color-black;
+$color-text-grey: $color-dark-grey;
+$color-text-light: $color-white;
 
 // -- State colors
-$color-info: $color-blue !default;
-$color-error: $color-red !default;
-$color-success: $color-green !default;
-$color-warning: $color-yellow !default;
-$color-select: $color-green !default;
-$color-focus: $color-green !default;
+$color-info: $color-blue;
+$color-error: $color-red;
+$color-success: $color-green;
+$color-warning: $color-yellow;
+$color-select: $color-green;
+$color-focus: $color-primary;
 
 // -- Additional colors and color ranges
-$color-ui: $color-grey !default;
-$color-ui-40: darken($color-ui, 22.5%) !default;
-$color-ui-50: darken($color-ui, 17.5%) !default;
-$color-ui-50: darken($color-ui, 17.5%) !default;
-$color-ui-60: darken($color-ui, 12.5%) !default;
-$color-ui-70: darken($color-ui, 10%) !default;
-$color-ui-80: darken($color-ui, 5%) !default;
-$color-ui-90: darken($color-ui, 2.5%) !default;
-$color-ui-100: $color-ui !default;
-$color-ui-200: lighten($color-ui, 2.5%) !default;
-$color-ui-300: lighten($color-ui, 5%) !default;
+$color-ui: $color-grey;
+$color-ui-40: darken($color-ui, 22.5%);
+$color-ui-50: darken($color-ui, 17.5%);
+$color-ui-50: darken($color-ui, 17.5%);
+$color-ui-60: darken($color-ui, 12.5%);
+$color-ui-70: darken($color-ui, 10%);
+$color-ui-80: darken($color-ui, 5%);
+$color-ui-90: darken($color-ui, 2.5%);
+$color-ui-100: $color-ui;
+$color-ui-200: lighten($color-ui, 2.5%);
+$color-ui-300: lighten($color-ui, 5%);
 
-$color-ui-dark: $color-black !default;
-$color-ui-light: $color-white !default;
-$color-ui-alt: $color-van-dijk-purple !default;
-$color-border: $color-dark-grey !default;
+$color-ui-dark: $color-black;
+$color-ui-light: $color-white;
+$color-ui-alt: $color-van-dijk-purple;
+$color-border: $color-dark-grey;
 
-$color-info-90: darken($color-info, 12.5%) !default;
-$color-info-100: $color-info !default;
-$color-info-200: lighten($color-info, 60%) !default;
+$color-info-90: darken($color-info, 12.5%);
+$color-info-100: $color-info;
+$color-info-200: lighten($color-info, 60%);
 
-$color-success-90: darken($color-success, 12.5%) !default;
-$color-success-100: $color-success !default;
-$color-success-200: lighten($color-success, 50%) !default;
+$color-success-90: darken($color-success, 12.5%);
+$color-success-100: $color-success;
+$color-success-200: lighten($color-success, 50%);
 
-$color-warning-90: darken($color-warning, 15%) !default;
-$color-warning-100: $color-warning !default;
-$color-warning-200: lighten($color-warning, 40%) !default;
+$color-warning-90: darken($color-warning, 15%);
+$color-warning-100: $color-warning;
+$color-warning-200: lighten($color-warning, 40%);
 
-$color-error-90: darken($color-error, 15%) !default;
-$color-error-100: $color-error !default;
-$color-error-180: lighten($color-error, 57.5%) !default;
-$color-error-200: lighten($color-error, 60%) !default;
+$color-error-90: darken($color-error, 15%);
+$color-error-100: $color-error;
+$color-error-180: lighten($color-error, 57.5%);
+$color-error-200: lighten($color-error, 60%);

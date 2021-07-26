@@ -1,0 +1,117 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import colorVariables from './shared/variables/colors';
+
+<Meta
+  title="Colors"
+/>
+
+# SASS Color Variables
+
+## Descriptive colors
+
+Do not use descriptive colors directly in your code. Only use them to define <a href="#functional-colors">functional colors</a>.
+
+<ColorPalette>
+  <ColorItem title="Black" subtitle="$color-black" colors={[colorVariables.colorBlack]} />
+  <ColorItem title="Grey" subtitle="$color-grey" colors={[colorVariables.colorGrey]} />
+  <ColorItem title="Dark Grey" subtitle="$color-dark-grey" colors={[colorVariables.colorDarkGrey]} />
+  <ColorItem title="Green" subtitle="$color-green" colors={[colorVariables.colorGreen]} />
+  <ColorItem title="Purple" subtitle="$color-purple" colors={[colorVariables.colorPurple]} />
+  <ColorItem title="Van Dijk Purple" subtitle="$color-van-dijk-purple" colors={[colorVariables.colorVanDijkPurple]} />
+  <ColorItem title="Yellow" subtitle="$color-yellow" colors={[colorVariables.colorYellow]} />
+  <ColorItem title="Red" subtitle="$color-red" colors={[colorVariables.colorRed]} />
+  <ColorItem title="Blue" subtitle="$color-blue" colors={[colorVariables.colorBlue]} />
+  <ColorItem title="White" subtitle="$color-white" colors={[colorVariables.colorWhite]} />
+</ColorPalette>
+
+## Functional colors
+
+Always use a <a href="#descriptive-colors">descriptive color</a> to define a functional color. Further more, always use the right functional color even when two (or more) functional colors have the same descriptive color (e.g. $color-heading and $color-primary). This will help when you want to target a specific color.
+
+### Hierarchical colors
+
+<ColorPalette>
+  <ColorItem title="Primary (purple)" subtitle="$color-primary" colors={[colorVariables.colorPrimary]} />
+  <ColorItem title="Secondary (green)" subtitle="$color-secondary" colors={[colorVariables.colorSecondary]} />
+  <ColorItem title="Tertiary (yellow)" subtitle="$color-tertiary" colors={[colorVariables.colorTertiary]} />
+  <ColorItem title="Quartiary (grey)" subtitle="$color-quartiary" colors={[colorVariables.colorQuartiary]} />
+</ColorPalette>
+
+### Typography colors
+
+<ColorPalette>
+  <ColorItem title="Heading (black)" subtitle="$color-heading" colors={[colorVariables.colorHeading]} />
+  <ColorItem title="Text (black)" subtitle="$color-text" colors={[colorVariables.colorText]} />
+  <ColorItem title="Text Grey (dark grey)" subtitle="$color-text-grey" colors={[colorVariables.colorTextGrey]} />
+  <ColorItem title="Text Light (white)" subtitle="$color-text-light" colors={[colorVariables.colorTextLight]} />
+</ColorPalette>
+
+### State colors
+
+<ColorPalette>
+  <ColorItem title="Info (blue)" subtitle="$color-info" colors={[colorVariables.colorInfo]} />
+  <ColorItem title="Error (red)" subtitle="$color-error" colors={[colorVariables.colorError]} />
+  <ColorItem title="Success (green)" subtitle="$color-success" colors={[colorVariables.colorSuccess]} />
+  <ColorItem title="Warning (yellow)" subtitle="$color-warning" colors={[colorVariables.colorWarning]} />
+  <ColorItem title="Select (green)" subtitle="$color-select" colors={[colorVariables.colorSelect]} />
+  <ColorItem title="Focus (purple)" subtitle="$color-focus" colors={[colorVariables.colorFocus]} />
+</ColorPalette>
+
+## Ranges
+
+Always keep the same variable order as above.
+
+### UI ranges
+
+<ColorPalette>
+  <ColorItem title="UI (grey)" subtitle="$color-ui" colors={[colorVariables.colorUi]} />
+  <ColorItem title="UI 40" subtitle="$color-ui-40" colors={[colorVariables.colorUi40]} />
+  <ColorItem title="UI 50" subtitle="$color-ui-50" colors={[colorVariables.colorUi50]} />
+  <ColorItem title="UI 60" subtitle="$color-ui-60" colors={[colorVariables.colorUi60]} />
+  <ColorItem title="UI 70" subtitle="$color-ui-70" colors={[colorVariables.colorUi70]} />
+  <ColorItem title="UI 80" subtitle="$color-ui-80" colors={[colorVariables.colorUi80]} />
+  <ColorItem title="UI 90" subtitle="$color-ui-90" colors={[colorVariables.colorUi90]} />
+  <ColorItem title="UI 100 (default)" subtitle="$color-ui-100" colors={[colorVariables.colorUi100]} />
+  <ColorItem title="UI 200" subtitle="$color-ui-200" colors={[colorVariables.colorUi200]} />
+  <ColorItem title="UI 300" subtitle="$color-ui-300" colors={[colorVariables.colorUi300]} />
+
+  <ColorItem title="UI Dark (black)" subtitle="$color-ui-dark" colors={[colorVariables.colorUiDark]} />
+  <ColorItem title="UI Light (white)" subtitle="$color-ui-light" colors={[colorVariables.colorUiLight]} />
+  <ColorItem title="UI Alternative (Van Dijk purple)" subtitle="$color-ui-alt" colors={[colorVariables.colorUiAlt]} />
+  <ColorItem title="UI Border (dark grey)" subtitle="$color-border" colors={[colorVariables.colorBorder]} />
+</ColorPalette>
+
+### State ranges
+
+#### Info
+
+<ColorPalette>
+  <ColorItem title="Info 90" subtitle="$color-info-90" colors={[colorVariables.colorInfo90]} />
+  <ColorItem title="Info 100 (default)" subtitle="$color-info-100" colors={[colorVariables.colorInfo100]} />
+  <ColorItem title="Info 200" subtitle="$color-info-200" colors={[colorVariables.colorInfo200]} />
+</ColorPalette>
+
+#### Success
+
+<ColorPalette>
+  <ColorItem title="Success 90" subtitle="$color-success-90" colors={[colorVariables.colorSuccess90]} />
+  <ColorItem title="Success 100 (default)" subtitle="$color-success-100" colors={[colorVariables.colorSuccess100]} />
+  <ColorItem title="Success 200" subtitle="$color-success-200" colors={[colorVariables.colorSuccess200]} />
+</ColorPalette>
+
+#### Warning
+
+<ColorPalette>
+  <ColorItem title="Warning 90" subtitle="$color-warning-90" colors={[colorVariables.colorWarning90]} />
+  <ColorItem title="Warning 100 (default)" subtitle="$color-warning-100" colors={[colorVariables.colorWarning100]} />
+  <ColorItem title="Warning 200" subtitle="$color-warning-200" colors={[colorVariables.colorWarning200]} />
+</ColorPalette>
+
+#### Error
+
+<ColorPalette>
+  <ColorItem title="Error 90" subtitle="$color-error-90" colors={[colorVariables.colorError90]} />
+  <ColorItem title="Error 100 (default)" subtitle="$color-error-100" colors={[colorVariables.colorError100]} />
+  <ColorItem title="Error 180" subtitle="$color-error-180" colors={[colorVariables.colorError180]} />
+  <ColorItem title="Error 200" subtitle="$color-error-200" colors={[colorVariables.colorError200]} />
+</ColorPalette>

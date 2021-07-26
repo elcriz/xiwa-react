@@ -15,6 +15,7 @@ Basic.args = {
   children: [
     (
       <XiwaDisclosureListItem
+        key={0}
         heading="Example question one of four"
       >
         <XiwaContent>
@@ -24,6 +25,7 @@ Basic.args = {
     ),
     (
       <XiwaDisclosureListItem
+        key={1}
         heading="Example question two of four"
       >
         <XiwaContent>
@@ -33,6 +35,7 @@ Basic.args = {
     ),
     (
       <XiwaDisclosureListItem
+        key={2}
         heading="Example question three of four"
       >
         <XiwaContent>
@@ -42,6 +45,7 @@ Basic.args = {
     ),
     (
       <XiwaDisclosureListItem
+        key={3}
         heading="Example question four of four"
       >
         <XiwaContent>
