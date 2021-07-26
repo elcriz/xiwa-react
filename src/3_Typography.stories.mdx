@@ -1,5 +1,4 @@
 import { Meta, Typeset } from '@storybook/addon-docs/blocks';
-import './shared/scss/variables/font-families.scss';
 
 <Meta title="Typography" />
 
@@ -7,9 +6,9 @@ import './shared/scss/variables/font-families.scss';
 
 ## Variables
 
-### Font family
+### Font families
 
-Xiwa uses **Poppins** as the main (sans serif) font family.
+SASS variables:
 
 ```scss
 $font-family-sans-serif: 'Poppins', 'Helvetica', 'Arial', sans-serif;
@@ -24,7 +23,7 @@ $font-size-60: 11px;
 $font-size-70: 12px;
 $font-size-80: 13px;
 $font-size-90: 14px;
-$font-size-100: 16px;
+$font-size-100: 16px; // default
 $font-size-200: 18px;
 $font-size-300: 21px;
 $font-size-400: 24px;
@@ -36,29 +35,6 @@ $font-size-900: 64px;
 $font-size-1000: 72px;
 
 ```
-Example:
-
-<Typeset
-  fontSizes={[
-    11,
-    12,
-    13,
-    14,
-    16,
-    18,
-    21,
-    24,
-    32,
-    36,
-    48,
-    56,
-    64,
-    72,
-  ]}
-  fontWeight={400}
-  fontFamily="Poppins"
-/>
-
 
 ### Font weights
 
@@ -67,47 +43,21 @@ SASS variables:
 ```scss
 $font-weight-80: 200;
 $font-weight-90: 300;
-$font-weight-100: 400;
+$font-weight-100: 400; // default
 $font-weight-200: 600;
 $font-weight-300: 800;
 ```
 
-#### $font-weight-80
+### Line heights
 
-<Typeset
-  fontSizes={[14, 21, 24]}
-  fontWeight={200}
-  fontFamily="Poppins"
-/>
-
-#### $font-weight-90
-
-<Typeset
-  fontSizes={[14, 21, 24]}
-  fontWeight={300}
-  fontFamily="Poppins"
-/>
-
-#### $font-weight-100 (default)
-
-<Typeset
-  fontSizes={[14, 21, 24]}
-  fontWeight={400}
-  fontFamily="Poppins"
-/>
-
-#### $font-weight-200
-
-<Typeset
-  fontSizes={[14, 21, 24]}
-  fontWeight={600}
-  fontFamily="Poppins"
-/>
-
-#### $font-weight-300
-
-<Typeset
-  fontSizes={[14, 21, 24]}
-  fontWeight={800}
-  fontFamily="Poppins"
-/>
+```scss
+$line-height-60: 1.1;
+$line-height-70: 1.3125;
+$line-height-80: 1.375;
+$line-height-90: 1.4375;
+$line-height-100: 1.5; // default
+$line-height-200: 1.5625;
+$line-height-300: 1.625;
+$line-height-400: 1.6875;
+$line-height-500: 1.75;
+```
