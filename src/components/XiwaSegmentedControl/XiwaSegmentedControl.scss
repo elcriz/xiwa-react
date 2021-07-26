@@ -1,0 +1,167 @@
+@import '../../shared/scss/index.scss';
+
+$xiwa-segmented-control-background-color: transparent !default;
+$xiwa-segmented-control-color: $color-text;
+$xiwa-segmented-control-focus-background-color: shade($xiwa-segmented-control-background-color, 5%) !default;
+$xiwa-segmented-control-border-color: $color-ui-90 !default;
+$xiwa-segmented-control-is-checked-background-color: $color-primary !default;
+$xiwa-segmented-control-is-checked-color: $color-text-light !default;
+$xiwa-segmented-control-label-color: $color-text !default;
+$xiwa-segmented-control-label-font-size: $font-size-80 !default;
+$xiwa-segmented-control-label-small-font-size: $font-size-60 !default;
+$xiwa-segmented-control-label-font-weight: $font-weight-100 !default;
+$xiwa-segmented-control-item-border-width: 1px !default;
+$xiwa-segmented-control-item-border-radius: $border-radius-80 !default;
+
+.xiwa-segmented-control {
+  display: table;
+  width: 100%;
+  clear: both;
+  text-align: left;
+}
+
+.xiwa-segmented-control--inline {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.xiwa-segmented-control__label-box {
+  display: block;
+  margin-bottom: $spacing;
+  clear: both;
+
+  .xiwa-segmented-control--inline & {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-bottom: 0;
+    padding-right: 15px;
+    white-space: nowrap;
+  }
+
+  @include media(0, $range-hand) {
+    .xiwa-segmented-control--fixed-width & {
+      display: none;
+    }
+  }
+}
+
+.xiwa-segmented-control__label {
+  display: block;
+  color: $xiwa-segmented-control-label-color;
+  opacity: .4;
+  font-size: $xiwa-segmented-control-label-font-size;
+}
+
+.xiwa-segmented-control__items {
+  display: flex;
+
+  .xiwa-segmented-control--inline & {
+    display: flex;
+  }
+
+  .xiwa-segmented-control--fixed-width & {
+    white-space: nowrap;
+  }
+
+  @include media(0, $range-hand) {
+    padding: 0;
+  }
+}
+
+.xiwa-segmented-control__item {
+  position: relative;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $xiwa-segmented-control-border-color;
+  background-color: transparent;
+  background-image: none;
+  white-space: nowrap;
+  border-right-width: 0;
+
+  &:focus-visible {
+    box-shadow: $box-shadow-focus-outset-200;
+  }
+
+  &:first-child {
+    border-top-left-radius: $xiwa-segmented-control-item-border-radius !important;
+    border-bottom-left-radius: $xiwa-segmented-control-item-border-radius !important;
+  }
+
+  &:last-child {
+    border-top-right-radius: $xiwa-segmented-control-item-border-radius !important;
+    border-bottom-right-radius: $xiwa-segmented-control-item-border-radius !important;
+    border-right-width: $xiwa-segmented-control-item-border-width !important;
+  }
+
+  @include media(0, $range-hand) {
+    display: inline-block;
+    margin-bottom: $spacing / 4;
+    margin-right: $spacing / 4;
+    border-right-width: $xiwa-segmented-control-item-border-width;
+    border-radius: $xiwa-segmented-control-item-border-radius;
+
+    .xiwa-segmented-control--fixed-width & {
+      margin-right: 0;
+      border-right-width: 0;
+      border-radius: 0;
+    }
+  }
+
+  @include media(0, $range-hand) {
+    display: table-cell;
+  }
+}
+
+.xiwa-segmented-control__input {
+  position: absolute;
+  z-index: -100;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+.xiwa-segmented-control__input-label {
+  display: block;
+  padding-top: floor(($spacing * 3.5 - ($xiwa-segmented-control-label-font-size * $line-height-60)) / 2); // NOTE: Floor function is added to the padding to ensure the min-height of the button does not exceed the control-size
+  padding-right: $spacing * 2;
+  padding-bottom: floor(($spacing * 3.5 - ($xiwa-segmented-control-label-font-size * $line-height-60)) / 2); // NOTE: Floor function is added to the padding to ensure the min-height of the button does not exceed the control-size
+  padding-left: $spacing * 2;
+  background-color: $xiwa-segmented-control-background-color;
+  color: $xiwa-segmented-control-color;
+  font-size: $xiwa-segmented-control-label-font-size;
+  font-weight: $xiwa-segmented-control-label-font-weight;
+  line-height: $line-height-60;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+
+  &:hover,
+  &:focus {
+    background-color: $xiwa-segmented-control-focus-background-color;
+  }
+
+  .xiwa-segmented-control__input:focus~& {
+    box-shadow: inset 0 0 0 2px $box-shadow-focus-outset-200;
+  }
+
+  .xiwa-segmented-control__input:checked~& {
+    background-color: $xiwa-segmented-control-is-checked-background-color;
+    color: $xiwa-segmented-control-is-checked-color;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .xiwa-segmented-control--small & {
+    padding: $spacing $spacing * 2;
+    font-size: $xiwa-segmented-control-label-small-font-size;
+  }
+
+  @include media(0, $range-hand) {
+    .xiwa-segmented-control--fixed-width & {
+      padding: $spacing / 4;
+    }
+  }
+}
