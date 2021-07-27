@@ -1,13 +1,16 @@
 @import '../../shared/scss/index.scss';
 
-$xiwa-button-background-color: $color-primary !default;
-$xiwa-button-background-color-light: rgb(255, 40, 130) !default;
-$xiwa-button-color: $color-text-light !default;
+$xiwa-button-background-color: $color-grey !default;
+$xiwa-button-color: $color-text-grey !default;
 $xiwa-button-font-family: $font-family-sans-serif !default;
 $xiwa-button-font-size: $font-size-80 !default;
 $xiwa-button-font-weight: $font-weight-200 !default;
 $xiwa-button-line-height: $line-height-70 !default;
-$xiwa-button-border: 1px solid $xiwa-button-background-color !default;
+$xiwa-button-border: 1px solid $color-border !default;
+
+$xiwa-button-primary-background-color: $color-primary !default;
+$xiwa-button-primary-background-color-light: rgb(255, 40, 130) !default;
+$xiwa-button-primary-color: $color-text-light !default;
 
 $xiwa-button-secondary-background-color: $color-secondary !default;
 $xiwa-button-secondary-color: $color-text-light !default;
@@ -45,9 +48,6 @@ $xiwa-button-300-line-height: $line-height-80 !default;
     padding: $spacing * 1.5 $spacing * 2;
     appearance: none;
     background-color: $xiwa-button-background-color;
-    background-image: linear-gradient(to bottom left,
-            $xiwa-button-background-color-light,
-            $xiwa-button-background-color);
     color: $xiwa-button-color;
     font-family: $xiwa-button-font-family;
     font-size: $xiwa-button-font-size;
@@ -122,6 +122,24 @@ $xiwa-button-300-line-height: $line-height-80 !default;
     font-size: $xiwa-button-300-font-size;
     font-weight: $xiwa-button-300-font-weight;
     line-height: $xiwa-button-300-line-height;
+}
+
+.xiwa-button--primary {
+  background-image: none;
+  background-color: $xiwa-button-primary-background-color;
+  background-image: linear-gradient(to bottom left,
+    $xiwa-button-primary-background-color-light,
+    $xiwa-button-primary-background-color);
+  color: $xiwa-button-primary-color;
+
+  &.xiwa-button--link {
+      color: $xiwa-button-primary-color;
+  }
+
+  &:hover,
+  &:focus {
+      background-color: darken($xiwa-button-primary-background-color, 10%);
+  }
 }
 
 .xiwa-button--secondary {
@@ -218,7 +236,7 @@ $xiwa-button-300-line-height: $line-height-80 !default;
 
 .xiwa-button--outlined {
     background: none;
-    color: $xiwa-button-background-color;
+    color: $xiwa-button-color;
     border: $xiwa-button-border;
 
     &.xiwa-button--link {
@@ -229,6 +247,16 @@ $xiwa-button-300-line-height: $line-height-80 !default;
     &:focus {
         background: none;
     }
+
+    &.xiwa-button--primary {
+      color: $xiwa-button-primary-background-color;
+      border-color: $xiwa-button-primary-background-color;
+
+      &.xiwa-button--link {
+          color: $xiwa-button-primary-background-color;
+      }
+  }
+
 
     &.xiwa-button--secondary {
         color: $xiwa-button-secondary-background-color;
@@ -248,7 +276,7 @@ $xiwa-button-300-line-height: $line-height-80 !default;
         }
     }
 
-    &.tlnds-button--error-confirmation {
+    &.xiwa-button--error-confirmation {
         color: $xiwa-button-error-confirmation-background-color;
         border-color: $xiwa-button-error-confirmation-background-color;
 
