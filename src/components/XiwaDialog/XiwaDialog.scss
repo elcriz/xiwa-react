@@ -34,7 +34,6 @@ $xiwa-dialog-error-icon-fill: $color-error-100 !default;
 	}
 	@include media($range-lap, false) {
 		padding: $spacing $spacing * 2;
-    max-width: 800px;
 	}
 }
 

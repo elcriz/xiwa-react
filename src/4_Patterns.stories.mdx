@@ -1,0 +1,110 @@
+import {
+  Meta,
+  Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  XiwaLayout,
+  XiwaLayoutColumn,
+  XiwaBox,
+  XiwaImage,
+  XiwaHeader,
+  XiwaContent,
+  XiwaActions,
+  XiwaButton,
+  XiwaLink,
+} from './components';
+import wavingQueen from './shared/assets/article-example-01.png';
+
+<Meta title="Patterns/Storytelling" />
+
+# Storytelling
+
+## Examples
+
+The examples below demonstrate how you can use components below to put together pieces of storytelling.
+
+### Large image on the left
+
+<Canvas>
+<XiwaLayout isLarge>
+  <XiwaLayoutColumn
+    variant="secondary"
+    size="oneThird"
+    verticalAlignment="middle"
+  >
+    <XiwaBox>
+      <XiwaHeader
+        heading="Quisque sagittis lacinia lorem"
+        subHeading="Quisque euismod lobortis odio in mattis imperdiet rhoncus"
+      />
+      <XiwaContent>
+        <p>Aliquam sed malesuada nunc, sed cursus elit. Curabitur eget nisl non eros blandit mollis id nec dui. Nulla finibus ac risus eu congue. Ut varius sagittis tempor. Quisque non neque in orci rutrum pharetra ac ac lacus. Proin vehicula lacus.</p>
+      </XiwaContent>
+      <XiwaActions>
+        <XiwaButton
+          variant="primary"
+          size="200"
+        >
+          Call To Action
+        </XiwaButton>
+        <XiwaLink isAlternative>
+          Secondary link
+        </XiwaLink>
+      </XiwaActions>
+    </XiwaBox>
+  </XiwaLayoutColumn>
+  <XiwaLayoutColumn
+    variant="primary"
+    size="twoThirds"
+  >
+    <XiwaImage
+      src={wavingQueen}
+      isCovering
+    />
+  </XiwaLayoutColumn>
+</XiwaLayout>
+</Canvas>
+
+Components used: <a href="/docs/layouts-xiwalayout--basic">XiwaLayout</a>, <a href="/docs/layouts-xiwalayoutcolumn--single-column">XiwaLayoutColumn</a>, <a href="/docs/components-xiwabox--basic">XiwaBox</a>, <a href="/docs/components-xiwaheader--basic">XiwaHeader</a>, <a href="/docs/components-xiwacontent--basic">XiwaContent</a>, <a href="/docs/components-xiwaactions--basic">XiwaActions</a>, <a href="/docs/controls-xiwabutton--basic">XiwaButton</a>, <a href="/docs/controls-xiwalink--basic">XiwaLink</a> and <a href="/docs/components-xiwaimage--basic">XiwaImage</a>.
+
+### Small image on the right
+
+<Canvas>
+<XiwaLayout isLarge>
+  <XiwaLayoutColumn
+    size="twoThirds"
+    verticalAlignment="middle"
+  >
+    <XiwaBox>
+      <XiwaHeader
+        heading="Quisque sagittis lacinia lorem"
+        subHeading="Quisque euismod lobortis odio in mattis imperdiet rhoncus"
+      />
+      <XiwaContent>
+        <p>Aliquam sed malesuada nunc, sed cursus elit. Curabitur eget nisl non eros blandit mollis id nec dui. Nulla finibus ac risus eu congue. Ut varius sagittis tempor. Quisque non neque in orci rutrum pharetra ac ac lacus. Proin vehicula lacus.</p>
+      </XiwaContent>
+      <XiwaActions>
+        <XiwaButton
+          variant="primary"
+          size="200"
+        >
+          Call To Action
+        </XiwaButton>
+        <XiwaLink isAlternative>
+          Secondary link
+        </XiwaLink>
+      </XiwaActions>
+    </XiwaBox>
+  </XiwaLayoutColumn>
+  <XiwaLayoutColumn
+    size="oneThird"
+  >
+    <XiwaImage
+      src={wavingQueen}
+      isCovering
+    />
+  </XiwaLayoutColumn>
+</XiwaLayout>
+</Canvas>
+
+Components used: <a href="/docs/layouts-xiwalayout--basic">XiwaLayout</a>, <a href="/docs/layouts-xiwalayoutcolumn--single-column">XiwaLayoutColumn</a>, <a href="/docs/components-xiwabox--basic">XiwaBox</a>, <a href="/docs/components-xiwaheader--basic">XiwaHeader</a>, <a href="/docs/components-xiwacontent--basic">XiwaContent</a>, <a href="/docs/components-xiwaactions--basic">XiwaActions</a>, <a href="/docs/controls-xiwabutton--basic">XiwaButton</a>, <a href="/docs/controls-xiwalink--basic">XiwaLink</a> and <a href="/docs/components-xiwaimage--basic">XiwaImage</a>.

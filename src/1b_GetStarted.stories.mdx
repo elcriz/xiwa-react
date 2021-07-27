@@ -1,0 +1,49 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { XiwaButton } from './components';
+
+<Meta
+  title="Get Started"
+/>
+
+# Get started
+
+## Installation
+
+Xiwa Design System components are written in React. They are documented in Storybook.
+
+### Add Xiwa Design System to your project
+
+Run `npm install @tln/xiwa-react` or `yarn add @tln/xiwa-react`.
+
+_**Please note:** this guide is currently a proof of concept. The package above isn't available yet. If you still want to use the Xiwa Design System for React already in your project, contact a The Learning Network (IT) operative._
+
+### Use the components
+
+Import the components you want to use in your project:
+
+```jsx
+import { XiwaButton } from '@tln/xiwa-react';
+```
+
+Then, you can use them like so:
+
+```jsx
+const Example = () => (
+  <div>
+    <XiwaButton variant="primary">
+      Click Me!
+    </XiwaButton>
+  </div>
+);
+```
+
+This will render the following:
+<Canvas>
+<div>
+  <XiwaButton variant="primary">Click Me!</XiwaButton>
+</div>
+</Canvas>
+
+### Use the styles
+
+More information on this topic will follow, soon.
